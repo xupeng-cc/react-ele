@@ -1,0 +1,49 @@
+@import "../../style/mixin";
+.info_page{
+  position:absolute;
+  top:0;right:0;left:0;bottom:0;
+  z-index:200;
+  background-color:#f2f2f2;
+}
+.infoWrapper{
+  padding-top:1.95rem;
+  .info_sub{
+    padding:0.4rem;
+    font-size:0.5rem;
+  }
+  .infoItem{
+    @include flex(space-between);
+    padding:0.3rem 0.4rem;
+    background-color:#fff;
+    border-bottom:1px solid #ddd;
+    img{
+      @include wh(2rem,2rem);
+    }
+    .info_item_des{
+      @include font(0.6rem);
+    }
+    .info_item_content{
+      line-height:1.4rem;
+      span{
+        @include font(0.7rem,#999);
+      }
+    }
+  }
+  .avatarBox{
+    position:relative;
+    .uploadAvatar{
+      position:absolute;
+      bottom:0;top:0;right:0;left:0;
+      width:100%;
+      opacity:0;
+    }
+  }
+  .logout{
+    background-color:#d8584a;
+    @include font(0.6rem,#ffff,center);
+    width:96%;
+    margin:1.5rem auto 0;
+    line-height:1.5rem;
+    border-radius:5px;
+  }
+}

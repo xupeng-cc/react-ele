@@ -1,0 +1,24 @@
+@import "../../style/mixin.scss";
+
+.license_container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 1);
+  z-index: 999;
+  .preview_img_list{
+    width:100%;
+    overflow:hidden;
+    @include positionCenter();
+    .preview_img_content{
+      white-space: nowrap;
+      // width:828px;
+      img {
+        display:inline-block;
+        // width: 414px;
+      }
+    }
+  }
+}

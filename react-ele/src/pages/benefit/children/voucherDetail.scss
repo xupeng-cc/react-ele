@@ -1,0 +1,19 @@
+@import "../../../style/mixin";
+
+.vDetail{
+  position:absolute;
+  top:0;right:0;left:0;bottom:0;
+  z-index:200;
+  background-color:#fff;
+}
+.markdown{
+  @include font(0.6rem, #666);
+  padding: 1.95rem 0.5rem 0.5rem;
+  h3{
+    line-height: 2rem;
+  }
+  p,li{
+    @include font(0.6rem, #666);
+    line-height: 1rem;
+  }
+}

@@ -1,0 +1,45 @@
+@import '../../style/mixin';
+
+.loginWrapper{
+  padding-top:1.95rem;
+  .inputBox{
+    padding:0.6rem 0.8rem;
+    background-color:#fff;
+    border:1px solid #f1f1f1;
+    input{
+      width:100%;
+      @include font(0.7rem,#666);
+    }
+  }
+  .code_container{
+    @include flex();
+    .code_img{
+      display:flex;
+      img{
+        @include wh(3.5rem,1.5rem);
+      }
+      .changeImg{
+        width:2rem;
+        p{
+          @include font(0.55rem,#666);
+        }
+        .changeImgMark{
+          color:$blue;
+        }
+      }
+    }
+  }
+  .loginTip{
+    @include font(0.5rem,red);
+    padding:0.4rem 0.6rem;
+  }
+  .loginBtn{
+    margin:0 0.6rem;
+    @include wh(calc(100% - 1.2rem),1.7rem);
+    @include font(0.7rem,#fff,center);
+    background-color:#4cd964;
+    line-height:1.9rem;
+    border:none;
+    border-radius:5px;
+  }
+}

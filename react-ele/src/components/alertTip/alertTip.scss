@@ -1,0 +1,34 @@
+@import "../../style/mixin";
+
+.alert_wrapper{
+  position:fixed;
+  top:0;right:0;bottom:0;left:0;
+  z-index:200;
+  background-color:rgba(0,0,0,0.4);
+  .alert_container{
+    @include positionCenter();
+    background-color:#fff;
+    width:12rem;
+    border-radius:0.5rem;
+    .alert_icon{
+      @include wh(3rem,3rem);
+      margin:1rem auto;
+      border-radius:50%;
+      background-color:$blue;
+    }
+    .alert_text{
+      @include font(0.7rem,#333,center);
+      line-height:0.9rem;
+      padding:0 0.6rem;
+    }
+    .alertConfirm{
+      @include wh(100%,1.8rem);
+      @include font(0.8rem,#fff,center);
+      margin-top:0.8rem;
+      line-height:1.8rem;
+      background-color:#4cd964;
+      border-bottom-left-radius:0.5rem;
+      border-bottom-right-radius:0.5rem;
+    }
+  }
+}

@@ -1,0 +1,79 @@
+@import "../../style/mixin";
+
+.profileContent{
+  padding-top:1.95rem;
+  .userInfoBox{
+    background-color:$blue;
+    padding:0.6rem;
+    font-weight:bold;
+    @include flex(flex-start);
+    .privateImage{
+      display:inline-block;
+      @include wh(2.5rem,2.5rem);
+      border-radius:50%;
+    }
+    .userInfo{
+      display:inline-block;
+      @include font(0.8rem,#fff);
+      margin-left:0.3rem;
+      p{
+        color:#fff;
+      }
+      .bindPhone{
+        font-size:0.4rem;
+      }
+    }
+  }
+  .info-data{
+    width:100%;
+    background-color:#fff;
+    .info-data-link{
+      display:inline-block;
+      width:33.3333%;
+      border-right:1px solid #f1f1f1;
+      &:nth-of-type(1){
+        b{
+          color:#f90;
+          font-weight:bold;
+        }
+      }
+      &:nth-of-type(2){
+        b{
+          color:#ff5f3e;
+        }
+      }
+      &:nth-of-type(3){
+        border-right:0;
+        b{
+          color:#6ac20b;
+        }
+      }
+      span{
+        display:block;
+        width:100%;
+        text-align:center;
+      }
+      .info-data-link-top{
+        padding:0.85rem 0 0.45rem;
+        font-size:0.55rem;
+        b{
+          font-size:1.2rem;
+        }
+      }
+      .info-data-link-bottom{
+        @include font(0.57rem,#666,center);
+        padding-bottom:0.45rem;
+      }
+    }
+  }
+  .profileList{
+    background-color:#fff;
+    padding-left:1.6rem;
+    margin-top:0.4rem;
+    .profileItem{
+      @include font(0.7rem,#333);
+      padding:0.43rem 0;
+      border-bottom:1px solid #f1f1f1;
+    }
+  }
+}

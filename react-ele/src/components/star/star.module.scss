@@ -1,0 +1,18 @@
+@import '../../style/mixin.scss';
+
+.starWrapper{
+  position:relative;
+  width:2.5rem;
+  height:0.5rem;
+  font-size:0;
+  .starContainer{
+    position:absolute;
+  }
+  .starOverflow{
+    white-space:nowrap;
+    overflow:hidden;
+  }
+}
+.star{
+  @include wh(1rem,1em);
+}

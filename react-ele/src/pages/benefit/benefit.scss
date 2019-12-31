@@ -1,0 +1,102 @@
+@import "../../style/mixin";
+.benefitWrapper{
+  padding-top:1.95rem;
+  .category_title{
+    height:2rem;
+    @include flex(space-around);
+    @include font(0.65rem,#333);
+    background-color:#fff;
+    .actived{
+      color:$blue;
+      border-bottom:0.1rem solid $blue;
+      padding-bottom:0.2rem;
+    }
+  }
+  .hongbao_container,.voucher_container{
+    padding:0 0.7rem;
+    .hongbao_title,.voucher_title{
+      @include flex(space-between);
+      font-size:0.5rem;
+      height:2rem;
+      .hongbao_count{
+        color:#ff5340;
+      }
+      .hongbao_des,.voucher_des{
+        .icon_des{
+          @include wh(0.6rem,0.6rem);
+          margin-right:0.2rem;
+          vertical-align:middle;
+        }
+        span{
+          color:$blue;
+        }
+      }
+    }
+    .hongbao_item{
+      display: flex;
+      padding:1rem 0.5rem 0.8rem;
+      background-color:#fff;
+      border-radius:0.25rem;
+      border-top:1px solid #ff5340;
+      margin-bottom:0.5rem;
+      .hongbao_item_left{
+        flex:1;
+        border-right:1px dotted #999;
+        .hongbao_amount{
+          span{
+            color:#ff5340;
+          }
+          span:nth-child(1){
+            font-size:0.75rem;
+          }
+          span:nth-child(2){
+            font-size:1.5rem;
+          }
+          span:nth-child(4){
+            font-size:0.8rem;
+          }
+        }
+        .hongbao_amountDes{
+          @include font(0.4rem,#999);
+        }
+      }
+      .hongbao_item_center{
+        flex:2;
+        padding-left:0.7rem;
+        p:nth-child(1){
+          @include font(0.7rem,#666);
+        }
+        p:nth-child(2),p:nth-child(3){
+          @include font(0.4rem,#999);
+        }
+      }
+      .hongbao_item_right{
+        flex:1;
+        text-align:right;
+        span{
+          @include font(0.75rem,#ff5340);
+        }
+      }
+    }
+    .historyHb{
+      @include font(0.6rem,#999,center);
+      line-height:2rem;
+    }
+  }
+
+  .no_Voucher_Contain{
+    text-align:center;
+    margin-top:4rem;
+    .icon_noVoucher{
+      @include wh(6rem,3.4rem);
+    }
+    p:first-of-type{
+      @include font(0.7rem,#666,center);
+      margin-top:0.4rem;
+    }
+    p:last-of-type{
+      @include font(0.5rem,#999,center);
+      margin-top:0.3rem;
+    }
+  }
+}

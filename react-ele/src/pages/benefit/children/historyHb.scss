@@ -1,0 +1,59 @@
+@import "../../../style/mixin";
+.history_hb{
+  position: absolute;
+  top:0;right:0;left:0;bottom:0;
+  z-index:200;
+  background-color:#f2f2f2;
+}
+.history_hb_list{
+  padding-top:1.9em;
+  .history_hb_contain{
+    position:fixed;
+    top:1.9rem;right:0;left:0;bottom:0;
+    overflow:hidden;
+    padding:0 0.5rem;
+    .history_hb_item{
+      padding:1rem 0;
+    }
+    .hongbao_item{
+      display: flex;
+      padding:1rem 0.5rem 0.8rem;
+      background-color:#fff;
+      border-radius:0.25rem;
+      border-top:3px solid #ccc;
+      margin-bottom:0.5rem;
+      .hongbao_item_left{
+        flex:1;
+        border-right:1px dotted #999;
+        .hongbao_amount{
+          span{
+            color:#ccc;
+          }
+          span:nth-child(1){
+            font-size:0.75rem;
+          }
+          span:nth-child(2){
+            font-size:1.5rem;
+          }
+          span:nth-child(4){
+            font-size:0.8rem;
+          }
+        }
+        .hongbao_amountDes{
+          @include font(0.4rem,#999);
+        }
+      }
+      .hongbao_item_center{
+        flex:2;
+        padding-left:0.7rem;
+        p:nth-child(1){
+          @include font(0.7rem,#666);
+        }
+        p:nth-child(2),p:nth-child(3){
+          @include font(0.4rem,#999);
+        }
+      }
+    }
+  }
+
+}

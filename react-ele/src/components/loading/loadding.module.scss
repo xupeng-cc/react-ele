@@ -1,0 +1,21 @@
+@import '../../style/mixin.scss';
+
+@keyframes load{
+  0%{transform:translateY(0px)}
+  50%{transform:translateY(-50px)}
+  100%{transform:translateY(0px)}
+}
+.load_wrapper{
+  position:fixed;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  z-index:999;
+  @include wh(2.5rem,2.5rem);
+  .load_img{
+    @include wh(100%,100%);
+    background:url("../../assets//imgs/icon_loading.png") no-repeat 0 0;
+    background-size:2.5rem auto;
+    animation:load 0.6s infinite;
+  }
+}

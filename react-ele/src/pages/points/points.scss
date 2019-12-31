@@ -1,0 +1,58 @@
+@import "../../style/mixin";
+
+.blanceWrapper{
+  padding-top:1.95rem;
+  .points_container{
+    background-color:$blue;
+    padding:0.3rem;
+    .points_content{
+      background-color:#fff;
+      padding:0.4rem;
+      border-radius:0.15rem;
+      .points_top{
+        @include flex(space-between);
+        font-size:0.55rem;
+        .icon_des{
+          @include wh(0.6rem,0.6rem);
+          vertical-align:middle;
+          margin-right:0.2rem;
+        }
+        .des_entrance{
+          color:$blue;
+          vertical-align:middle;
+        }
+      }
+      .amount{
+        @include font(1.8rem,#333,left);
+        .amountUnit{
+          font-size:0.7rem;
+        }
+      }
+      .withdrawBtn{
+        @include wh(100%,2rem);
+        line-height:2rem;
+        @include font(0.8rem,#fff,center);
+        background-color:#fe6d47;
+        border-radius:0.15rem;
+        margin-top:1rem;
+      }
+    }
+  }
+  .transaction_container{
+    .transaction_title{
+      @include font(0.6rem,#999,left);
+      line-height:2rem;
+      padding-left:0.5rem;
+    }
+    .noTransaction{
+      text-align:center;
+      img{
+        @include wh(8rem,5rem);
+      }
+      p{
+        @include font(0.7rem,#666,center);
+        margin-top:0.5rem;
+      }
+    }
+  }
+}

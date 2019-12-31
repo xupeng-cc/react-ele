@@ -1,0 +1,114 @@
+@import '../../style/mixin.scss';
+
+.shop_item{
+  padding:0.7rem 0.4rem;
+  border-bottom:1px solid #f1f1f1;
+  @include flex(space-between);
+  .shop_item_left{
+    width:66.666666%;
+    .shop_img{
+      display:inline-block;
+      @include wh(2.7rem,2.7rem);
+      margin-right:0.4rem;
+      vertical-align:top;
+    }
+    .shop_des{
+      display:inline-block;
+      width:calc(100% - 3.1rem);
+      .shop_title{
+        // width:5rem;
+        // white-space: nowrap;
+        font-size:0;
+        .shop_brand{
+          display: inline-block;
+          width: 1.8rem;
+          text-align: center;
+          background-color:#ffd930;
+          font-size:0.5rem;
+          font-weight:bold;
+          line-height:0.65rem;
+          vertical-align:middle;
+          padding:0 0.2rem;
+          margin-right:0.4rem;
+        }
+        .shop_name{
+          @include font(0.65rem,#333);
+          vertical-align:middle;
+          font-weight:bold;
+          display: inline-block;
+          width: calc(100% - 2.6rem);
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+        }
+      }
+      .shop_score{
+        margin:0.52rem 0;
+        font-size:0;
+        .shop_star{
+          display:inline-block;
+          // position:relative;
+        }
+        .shop_fraction{
+          @include font(0.4rem,#ff6000);
+          margin:0 0.2rem;
+        }
+        .shop_sale_volume{
+          display:inline-block;
+          transform:scale(0.8);
+          @include font(0.4rem,#666);
+        }
+      }
+      .shop_other{
+        transform:scale(0.9);
+        @include font(0.5rem,#666);
+      }
+    }
+  }
+  .shop_item_right{
+    @include font(0.6rem,#666,right);
+    width:33.33333333%;
+    // flex:1;
+    .shop_standard{
+      transform:scale(0.8);
+      margin-right:-0.5rem;
+      .shop_juti{
+        @include font(0.5rem,#999,right);
+        border: 0.025rem solid #f1f1f1;
+        padding:0 0.04rem;
+        margin-left:0.1rem;
+      }
+    }
+    .shop_matching{
+      margin:0.52rem -0.7rem 0.52rem 0;
+      transform:scale(0.7);
+      .shop_zhuan{
+        background-color:$blue;
+        color:#fff;
+        margin-right:0.15rem;
+        border:1px solid $blue;
+        padding:0.13rem;
+        border-radius:0.1rem;
+      }
+      .shop_zhui{
+        color:$blue;
+        border:1px solid $blue;
+        padding:0.13rem;
+        border-radius:0.1rem;
+      }
+    }
+    .shop_time_distance{
+      transform:scale(0.9);
+      font-size:0.5rem;
+      margin-right:-0.2rem;
+      .shop_distance{
+        color:#999;
+        margin-right:0.15rem;
+      }
+      .shop_time{
+        color:#3190e8;
+        margin-left:0.15rem;
+      }
+    }
+  }
+}

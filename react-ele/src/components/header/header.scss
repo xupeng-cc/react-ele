@@ -1,0 +1,20 @@
+@import "../../style/mixin";
+
+.head_top{
+  @include wh(100%,1.95rem);
+  background-color:$blue;
+  position: fixed;
+  z-index: 101;
+  left: 0;
+  right: 0;
+  top: 0;
+  .headerBack{
+    @include font(1.3rem,#fff);
+    @include positionLeft;
+  }
+  .headerTitle{
+    @include font(0.7rem,#fff);
+    @include positionCenter;
+    font-weight:bold;
+  }
+}

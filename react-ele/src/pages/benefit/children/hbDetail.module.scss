@@ -1,0 +1,25 @@
+@import "../../../style/mixin";
+
+.hb_detail_wrapper{
+  position:fixed;
+  top:0;right:0;left:0;bottom:0;
+  background-color:#fff;
+  z-index:200;
+  padding-top:1.95rem;
+  .hb_detail_contain{
+    @include wh(100%,100%);
+    .markdown{
+      @include font(0.6rem, #666);
+      padding: 0 0.5rem 0.5rem;
+      h3{
+        line-height: 1rem;
+        padding:0.5rem 0;
+        font-weight:bold;
+      }
+      p,li{
+        @include font(0.6rem, #666);
+        line-height: 1rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,154 @@
+@import "../../style/mixin.scss";
+
+.orderConfirm{
+  padding-top:1.95rem;
+}
+.address_contailer{
+  padding:0 0.6rem;
+  min-height:3.5rem;
+  @include flex(flex-start);
+  background:url("../../assets/imgs/address_bottom.png") left bottom repeat-x;
+  background-color:#fff;
+  background-size:auto 0.12rem;
+  .addressText{
+    flex:1;
+    font-size:0;
+    margin-left:0.2rem;
+    p:first-child{
+      b{
+        @include font(0.8rem,#333,left,bold);
+      }
+      span{
+        @include font(0.63rem,#333);
+        margin-left:0.2rem;
+      }
+    }
+    p:last-child{
+      b{
+        background-color:rgb(76, 217, 100);
+        @include font(0.55rem,#fff);
+        padding:0 0.2rem;
+        border-radius:0.2rem;
+        margin-right:0.3rem;
+      }
+      span{
+        @include font(0.55rem,#777);
+      }
+    }
+  }
+}
+.deliver_time{
+  @include flex(space-between);
+  min-height:4rem;
+  background-color:#fff;
+  padding:0 0.6rem;
+  border-left:0.2rem solid $blue;
+  margin:0.4rem 0;
+  .deliver_text{
+    @include font(0.8rem,#333,left,bold);
+    text-align:right;
+  }
+  .deliver_right{
+    text-align:right;
+    p:first-child{
+      @include font(0.7rem,$blue,right);
+    }
+    p:last-child{
+      @include font(0.5rem,#fff,right);
+      background-color:$blue;
+      display:inline-block;
+      padding:0.1rem 0.2rem;
+      border-radius:0.2rem;
+    }
+  }
+}
+.payMethod,.remark{
+  background:#fff;
+  padding:0 0.7rem;
+  margin:0.4rem 0;
+  p{
+    @include flex(space-between);
+    height:2rem;
+    span{
+      @include font(0.6rem,#aaa);
+    }
+  }
+  p:first-child{
+    border-bottom:1px solid #f5f5f5;
+    span:first-child{
+      @include font(0.7rem,#666);
+    }
+  }
+}
+.remark{
+  margin-bottom:4rem;
+}
+.goodList{
+  background-color:#fff;
+  margin:0.4rem 0;
+  .goodTitle{
+    padding:0.7rem;
+    border-bottom:1px solid #f5f5f5;
+    img{
+      @include wh(1.2rem,1.2rem);
+      vertical-align:middle;
+      margin-right:0.2rem;
+    }
+    span{
+      @include font(0.7rem)
+    }
+  }
+  .goodList_ul{
+    padding:0 0.7rem;
+    .goodList_li{
+      @include flex(space-between);
+      height:1.8rem;
+      span{
+        @include font(0.65rem,#666);
+      }
+      .goodNum{
+        color:#f60;
+        margin-right:0.3rem;
+      }
+    }
+  }
+  .otherCost{
+    padding:0 0.7rem;
+    @include flex(space-between);
+    height:1.8rem;
+    span{
+      @include font(0.65rem,#666);
+    }
+  }
+  .totalPrice{
+    @include flex(space-between);
+    height:2rem;
+    padding:0 0.7rem;
+    border-top:1px solid #f5f5f5;
+    span{
+      @include font(0.65rem,#666);
+    }
+    span:last-child{
+      color:#f60;
+    }
+  }
+}
+.confirmFoot{
+  position:fixed;
+  bottom:0;left:0;right:0;
+  @include flex(space-between);
+  height:2rem;
+  span:first-child{
+    flex:5;
+    line-height:2rem;
+    @include font(0.75rem,#fff,left);
+    background-color:#3c3c3c;
+    padding-left:0.7rem;
+  }
+  span:last-child{
+    flex:2;
+    line-height:2rem;
+    @include font(0.75rem,#fff,center);
+    background-color:#56d176;
+  }
+}

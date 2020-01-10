@@ -13,10 +13,11 @@ $common-right: 0.6rem;
 }
 
 // 字体颜色,大小, 水平布局
-@mixin font($size, $color: #333, $text-align: left){
+@mixin font($size, $color: #333, $text-align: left,$font-weight:normal){
   font-size: $size;
   color: $color;
   text-align: $text-align;
+  font-weight:$font-weight;
 }
 
 // flex布局

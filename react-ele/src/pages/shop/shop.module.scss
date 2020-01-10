@@ -167,405 +167,48 @@
   }
 }
 .showWrapper{
-  .rate_content{
-    .rate_content_head{
-      padding:0.8rem 0.5rem;
-      display:flex;
-      border-bottom:0.5rem solid #f5f5f5;
-      .rate_content_head_left{
-        flex:3;
-        p:nth-child(1){
-          @include font(1.2rem,#f60,center);
-        }
-        p:nth-child(2){
-          @include font(0.65rem,#666,center);
-        }
-        p:nth-child(3){
-          @include font(0.4rem,#999,center);
-        }
-      }
-      .rate_content_head_right{
-        flex:4;
-        .score_des{
-          @include font(0.65rem,#666);
-          margin-right:0.5rem;
-        }
-        .score_icon{
-          display: inline-block;
-          .iconWh{
-            @include wh(0.4rem,0.4rem);
-          }
-        }
-        .score_num{
-          @include font(0.55rem,#f60);
-          margin-left:0.5rem;
-        }
-        .score_time{
-          @include font(0.4rem,#999);
-        }
-      }
-    }
-    .rate_classify{
-      padding:0.5rem;
-      border-bottom:1px solid #eee;
-      .tagItem{
-        display:inline-block;
-        padding:0.3rem;
-        background-color:#ebf5ff;
-        border-radius:0.2rem;
-        margin:0 0.4em 0.2rem 0;
-        @include font(0.6rem,#6d7885);
-      }
-    }
-    .rateList{
-      padding-left:0.5rem;
-    }
-    .rateItem{
-      @include flex(flex-start,flex-start);
-      padding:0.6rem 0.5rem 0.5rem 0;
-      border-bottom:1px solid #eee;
-      .rate_touxiang{
-        flex:0 0 2.3rem;
-        img{
-          @include wh(1.5rem,1.5rem);
-          border-radius:50%;
-        }
-      }
-      .rate_item_detail{
-        flex:1;
-        .rate_item_userTime{
-          @include flex(space-between);
-          .rate_item_userName{
-            @include font(0.7rem);
-          }
-          .rate_item_time{
-            @include font(0.4rem,#666);
-          }
-        }
-        .rate_item_score{
-          span{
-            @include font(0.6rem,#666);
-          }
-          .rate_score{
-            display:inline-block;
-            margin-left:0.2rem;
-          }
-        }
-      }
-      .rate_desText{
-        @include font(0.7rem,#333);
-      }
-      .rate_foodImgList{
-        @include flex(flex-start);
-        margin-top:0.3rem;
-        .rate_foodImg{
-          @include wh(3rem,3rem);
-          margin-right:0.3rem;
-          margin-bottom:0.3rem;
-          img{
-            @include wh(100%,100%);
-            border-radius:0.25rem;
-          }
-        }
-      }
-    }
-  }
-  .goods{
-    display: flex;
-    position:absolute;
-    top:6.1rem;left:0;right:0;bottom:2rem;
-    overflow:hidden;
-    background-color:#fff;
-    .menuWrapper{
-      flex:0 0 80px;
-      width:80px;
-      background: #f3f5f7;
-      .menuItem{
-        padding:0 12px;
-        width:80px;height:54px;
-        display: table;
-        line-height:14px;
-        font-weight: 200;
-        color:rgb(0,20,20);
-        span{
-          display:table-cell;height:100%;
-          font-size: 12px;
-          border-bottom:1px solid rgba(7,17,27,0.1);
-          vertical-align: middle;
-          text-align: center;
-        }
-      }
-      .current{
-        background: #fff;
-        color:red;
-      }
-    }
-    .goodsWrapper{
-      flex: 1;
-    } 
-    .foodsTypeItem>h1{
-      background: #f3f5f7;height:26px;line-height: 26px;border-left:2px solid #d9dde1;padding-left:14px;
-      font-size: 12px;color:rgb(147,153,159);
-    }
-    .foodsItem{
-      margin:18px 18px 0 18px;font-size: 0;padding-bottom: 18px;
-      border-bottom:1px solid rgba(7,17,27,0.1);
-      .foodImg{
-        display: inline-block;width:64px;height:64px;margin-right:10px;vertical-align: top;
-      }
-      .foodContent{
-        display: inline-block;
-        width:calc(100% - 74px);
-        text-align: justify;
-        position: relative;
-      }
-      .foodName{
-        font-size: 14px;color:rgb(7,17,27);line-height: 14px;margin-top:2px;
-      }
-      .foodDes,.foodData{
-        font-size:10px;color:rgb(147,153,159);
-      }
-      .foodDes{
-        margin:8px 0;
-      }
-      .currentPrice{
-        font-size:14px;
-        color:rgb(240,20,20);
-        font-weight:700;
-        line-height: 24px;
-        margin-right:8px;
-      }
-      .oldPrice {
-        font-size:10px;
-        color:rgb(147,153,159);
-        font-weight:700;
-        line-height: 24px;
-        text-decoration:line-through;
-      }
-    }
-    .foodsTypeItem .foodsItem:last-child{
-      border: none;
-    }
-    .cartControlWrapper{
-      position: absolute;
-      bottom:0;right:12px;
-    }
-  }
+  
 }
 
-// .shop_detail_container{
-//   position:relative;
-//   .shop_detail_container_nav{
-//     @include flex();
-//     height:2.25rem;
-//     background-color:#fff;
-//     border-bottom:1px solid #ccc;
-//     div{
-//       width:50%;
-//       @include font(0.65rem,#666,center);
-//       &.active{
-//         span{
-//           padding:0.2rem 0.1rem;
-//           border-bottom:0.12rem solid $blue;
-//           color:$blue;
-//         }
-//       }
-//     }
-//   }
-//   .showWrapper{
-//     position:absolute;
-//     top:2.25rem;
-//     bottom:0;
-//     left:0;right:0;
-//     background-color:#fff;
-//     // overflow: hidden;
-//     .show_wrapper_content{
-//       // width:100%;
-//       // height:100%;
-//       // overflow:hidden;
-//     }
-//     .rate_content{
-//       .rate_content_head{
-//         padding:0.8rem 0.5rem;
-//         display:flex;
-//         border-bottom:0.5rem solid #f5f5f5;
-//         .rate_content_head_left{
-//           flex:3;
-//           p:nth-child(1){
-//             @include font(1.2rem,#f60,center);
-//           }
-//           p:nth-child(2){
-//             @include font(0.65rem,#666,center);
-//           }
-//           p:nth-child(3){
-//             @include font(0.4rem,#999,center);
-//           }
-//         }
-//         .rate_content_head_right{
-//           flex:4;
-//           .score_des{
-//             @include font(0.65rem,#666);
-//             margin-right:0.5rem;
-//           }
-//           .score_icon{
-//             display: inline-block;
-//             .iconWh{
-//               @include wh(0.4rem,0.4rem);
-//             }
-//           }
-//           .score_num{
-//             @include font(0.55rem,#f60);
-//             margin-left:0.5rem;
-//           }
-//           .score_time{
-//             @include font(0.4rem,#999);
-//           }
-//         }
-//       }
-//       .rate_classify{
-//         padding:0.5rem;
-//         border-bottom:1px solid #eee;
-//         .tagItem{
-//           display:inline-block;
-//           padding:0.3rem;
-//           background-color:#ebf5ff;
-//           border-radius:0.2rem;
-//           margin:0 0.4em 0.2rem 0;
-//           @include font(0.6rem,#6d7885);
-//         }
-//       }
-//       .rateList{
-//         padding-left:0.5rem;
-//       }
-//       .rateItem{
-//         @include flex(flex-start,flex-start);
-//         padding:0.6rem 0.5rem 0.5rem 0;
-//         border-bottom:1px solid #eee;
-//         .rate_touxiang{
-//           flex:0 0 2.3rem;
-//           img{
-//             @include wh(1.5rem,1.5rem);
-//             border-radius:50%;
-//           }
-//         }
-//         .rate_item_detail{
-//           flex:1;
-//           .rate_item_userTime{
-//             @include flex(space-between);
-//             .rate_item_userName{
-//               @include font(0.7rem);
-//             }
-//             .rate_item_time{
-//               @include font(0.4rem,#666);
-//             }
-//           }
-//           .rate_item_score{
-//             span{
-//               @include font(0.6rem,#666);
-//             }
-//             .rate_score{
-//               display:inline-block;
-//               margin-left:0.2rem;
-//             }
-//           }
-//         }
-//         .rate_desText{
-//           @include font(0.7rem,#333);
-//         }
-//         .rate_foodImgList{
-//           @include flex(flex-start);
-//           margin-top:0.3rem;
-//           .rate_foodImg{
-//             @include wh(3rem,3rem);
-//             margin-right:0.3rem;
-//             margin-bottom:0.3rem;
-//             img{
-//               @include wh(100%,100%);
-//               border-radius:0.25rem;
-//             }
-//           }
-//         }
-//       }
-//     }
-//     .goods{
-//       display: flex;
-//       // position:absolute;
-//       // top:2.25rem;left:0;right:0;bottom:0;
-//       // overflow:hidden;
-//       .menuWrapper{
-//         flex:0 0 80px;
-//         width:80px;
-//         background: #f3f5f7;
-//         .menuItem{
-//           padding:0 12px;
-//           width:80px;height:54px;
-//           display: table;
-//           line-height:14px;
-//           font-weight: 200;
-//           color:rgb(0,20,20);
-//           span{
-//             display:table-cell;height:100%;
-//             font-size: 12px;
-//             border-bottom:1px solid rgba(7,17,27,0.1);
-//             vertical-align: middle;
-//             text-align: center;
-//           }
-//         }
-//         .current{
-//           background: #fff;
-//           color:red;
-//         }
-//       }
-//       .goodsWrapper{
-//         flex: 1;
-//       } 
-//       .foodsTypeItem>h1{
-//         background: #f3f5f7;height:26px;line-height: 26px;border-left:2px solid #d9dde1;padding-left:14px;
-//         font-size: 12px;color:rgb(147,153,159);
-//       }
-//       .foodsItem{
-//         margin:18px 18px 0 18px;font-size: 0;padding-bottom: 18px;
-//         border-bottom:1px solid rgba(7,17,27,0.1);
-//         .foodImg{
-//           display: inline-block;width:64px;height:64px;margin-right:10px;vertical-align: top;
-//         }
-//         .foodContent{
-//           display: inline-block;
-//           width:calc(100% - 74px);
-//           text-align: justify;
-//           position: relative;
-//         }
-//         .foodName{
-//           font-size: 14px;color:rgb(7,17,27);line-height: 14px;margin-top:2px;
-//         }
-//         .foodDes,.foodData{
-//           font-size:10px;color:rgb(147,153,159);
-//         }
-//         .foodDes{
-//           margin:8px 0;
-//         }
-//         .currentPrice{
-//           font-size:14px;
-//           color:rgb(240,20,20);
-//           font-weight:700;
-//           line-height: 24px;
-//           margin-right:8px;
-//         }
-//         .oldPrice {
-//           font-size:10px;
-//           color:rgb(147,153,159);
-//           font-weight:700;
-//           line-height: 24px;
-//           text-decoration:line-through;
-//         }
-//       }
-//       .foodsTypeItem .foodsItem:last-child{
-//         border: none;
-//       }
-//       .cartControlWrapper{
-//         position: absolute;
-//         bottom:0;right:12px;
-//       }
-//     }
-//   }
-// }
+.shopDetailHead{
+  padding:0.4rem;
+  background:rgba(119, 103, 137, 0.43);
+  position:relative;
+  .icon_back{
+    position:absolute;
+    top:0.3rem;left:0.3rem;
+    z-index:1;
+    @include wh(1rem,1rem);
+  }
+  .shopDetailHead_top{
+    @include flex(flex-start,flex-start);
+    position:relative;
+    .shopImg{
+      flex:0 0 2.9rem;
+      @include wh(2.9rem,2.9rem);
+    }
+    .shopText{
+      flex:1;
+      margin:0 1rem 0 0.3rem;
+      p{
+        @include font(0.5rem,#fff);
+      }
+      p:nth-child(1){
+        font-weight:bold;
+        font-size:0.8rem;
+      }
+      p:nth-child(2){
+        margin:0.2rem 0;
+      }
+    }
+    .icon_right{
+      @include wh(0.7rem,0.7rem);
+      @include positionHCenter();
+      right:0;
+    }
+  }
+  .actives{
+    height:0.8rem;
+    @include font(0.5rem,#fff);
+  }
+}

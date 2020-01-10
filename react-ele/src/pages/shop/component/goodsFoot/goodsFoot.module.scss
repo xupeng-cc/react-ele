@@ -1,0 +1,104 @@
+@import '../../../../style/mixin.scss';
+
+.goodsFooter{
+  position:fixed;
+  bottom:0;left:0;right:0;
+  // z-index:12;
+  .footerContent{
+    position: absolute;
+    left:0;right:0;bottom:0;
+    z-index:14;
+    @include flex(space-between);
+    height:2rem;
+    background-color:#141d27;
+  }
+  .goodsFooter_left{
+    flex:1;
+    display:flex;
+    align-items:center;
+    .logoWrapper{
+      display:inline-block;
+      box-sizing: border-box;
+      width:2rem;height:2rem;
+      border-radius:50%;
+      background-color:#2b343c;
+      margin-left:0.5rem;
+      margin-right:0.5rem;
+      border:0.2rem solid #141d27;
+      position:relative;
+      top:-0.3rem;
+      .logo_sum{
+        position:absolute;
+        top:-0.2rem;right:-0.2rem;
+        padding:0 0.2rem;
+        background-color:#ff461d;
+        @include font(0.5rem,#fff);
+        border-radius:0.5rem;
+      }
+    }
+    .subPrice{
+      display:inline-block;
+      vertical-align:top;
+      p:first-child{
+        @include font(0.8rem,#fff);
+      }
+      p:last-child{
+        @include font(0.4rem,#fff);
+      }
+    }
+  }
+  .goodsFooter_right{
+    flex:0 0  5.2rem;
+    height:100%;
+    line-height:2rem;
+    background-color:#2b333b;
+    @include font(0.7rem,#fff,center);
+    &.active{
+      background-color:#4cd964;
+    }
+  }
+}
+.selectFoods_box{
+  position:absolute;
+  bottom:2rem;
+  left:0;right:0;
+  z-index:13;
+  .selectFoods_head{
+    background-color:#eceff1;
+    padding:0.3rem 0.6rem;
+    span{
+      @include font(0.7rem,#666);
+    }
+  }
+  .selectFoods_list{
+    background-color:#fff;
+    .selectFoods_li{
+      padding:0.8rem 0.6rem;
+      @include flex(flex-start,flex-start);
+      border:1px solid #eee;
+      img{
+        @include wh(2rem,2rem);
+        vertical-align:top;
+        flex:0 0 2rem;
+        margin-right:0.3rem;
+      }
+      .selectFoods_des{
+        flex:1;
+        position:relative;
+        p{
+          @include font(0.9rem,#666);
+          line-height:0.9rem;
+        }
+        .subPrice{
+          @include font(0.6rem,orange);
+        }
+      }
+    }
+  }
+}
+.goodsFooterModel{
+  position:fixed;
+  top: 0;right: 0;bottom: 0;left: 0;
+  background-color:rgba(0,0,0,0.6);
+  z-index:12;
+}

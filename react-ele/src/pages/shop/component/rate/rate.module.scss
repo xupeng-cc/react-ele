@@ -1,0 +1,109 @@
+@import "../../../../style//mixin.scss";
+
+.rate_content{
+  position:absolute;
+  top:6.8rem;left:0;right:0;bottom:0;
+  overflow:hidden;
+  background-color:#fff;
+  .rate_content_head{
+    padding:0.8rem 0.5rem;
+    display:flex;
+    border-bottom:0.5rem solid #f5f5f5;
+    .rate_content_head_left{
+      flex:3;
+      p:nth-child(1){
+        @include font(1.2rem,#f60,center);
+      }
+      p:nth-child(2){
+        @include font(0.65rem,#666,center);
+      }
+      p:nth-child(3){
+        @include font(0.4rem,#999,center);
+      }
+    }
+    .rate_content_head_right{
+      flex:4;
+      .score_des{
+        @include font(0.65rem,#666);
+        margin-right:0.5rem;
+      }
+      .score_icon{
+        display: inline-block;
+        .iconWh{
+          @include wh(0.4rem,0.4rem);
+        }
+      }
+      .score_num{
+        @include font(0.55rem,#f60);
+        margin-left:0.5rem;
+      }
+      .score_time{
+        @include font(0.4rem,#999);
+      }
+    }
+  }
+  .rate_classify{
+    padding:0.5rem;
+    border-bottom:1px solid #eee;
+    .tagItem{
+      display:inline-block;
+      padding:0.3rem;
+      background-color:#ebf5ff;
+      border-radius:0.2rem;
+      margin:0 0.4em 0.2rem 0;
+      @include font(0.6rem,#6d7885);
+    }
+  }
+  .rateList{
+    padding-left:0.5rem;
+  }
+  .rateItem{
+    @include flex(flex-start,flex-start);
+    padding:0.6rem 0.5rem 0.5rem 0;
+    border-bottom:1px solid #eee;
+    .rate_touxiang{
+      flex:0 0 2.3rem;
+      img{
+        @include wh(1.5rem,1.5rem);
+        border-radius:50%;
+      }
+    }
+    .rate_item_detail{
+      flex:1;
+      .rate_item_userTime{
+        @include flex(space-between);
+        .rate_item_userName{
+          @include font(0.7rem);
+        }
+        .rate_item_time{
+          @include font(0.4rem,#666);
+        }
+      }
+      .rate_item_score{
+        span{
+          @include font(0.6rem,#666);
+        }
+        .rate_score{
+          display:inline-block;
+          margin-left:0.2rem;
+        }
+      }
+    }
+    .rate_desText{
+      @include font(0.7rem,#333);
+    }
+    .rate_foodImgList{
+      @include flex(flex-start);
+      margin-top:0.3rem;
+      .rate_foodImg{
+        @include wh(3rem,3rem);
+        margin-right:0.3rem;
+        margin-bottom:0.3rem;
+        img{
+          @include wh(100%,100%);
+          border-radius:0.25rem;
+        }
+      }
+    }
+  }
+}

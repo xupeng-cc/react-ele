@@ -14,6 +14,7 @@ import order from '../pages/order/order'
 import msite from '../pages/msite/msite'
 import food from '../pages/food/food'
 import shop from '../pages/shop/shop'
+import orderConfirm from '../pages/orderConfirm/orderConfirm'
 
 //auth字段用来判断是否需要登录才可以访问
 const Routers = [
@@ -27,7 +28,8 @@ const Routers = [
   {path:"/order",component:order,auth:true},
   {path:"/msite",component:msite},
   {path:"/food",component:food},
-  {path:"/shop/:id",component:shop}
+  {path:"/shop/:id",component:shop},
+  {path:"/orderConfirm",component:orderConfirm,auth:true}
 ]
 
 class RouterConfig extends Component{
@@ -36,7 +38,8 @@ class RouterConfig extends Component{
     this.state = {}
   }
   render(){
-    let token = this.props.user_id;
+    // let token = this.props.user_id;
+    let token = localStorage.getItem("user_id");
     return (
       <HashRouter>
         <Switch>

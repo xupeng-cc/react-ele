@@ -1,0 +1,31 @@
+@import '../../../../style/mixin.scss';
+
+.cartControlWrapper{
+  position: absolute;
+  bottom:0;right:12px;
+  .cartControl{
+    font-size: 0;
+    .cart_add,.cart_reduce{
+      display: inline-block;
+      padding:6px;
+      width:24px;height:24px;
+      border-radius: 50%;
+      background: rgb(0,160,220);
+      .reduce{
+        display: inline-block;
+        @include wh(100%,100%);
+        @include font(10px,white,center);
+      }
+      .increase{
+        display:inline-block;
+        @include wh(100%,100%);
+        @include font(10px,white,center);
+      }
+    }
+    .count{
+      display: inline-block;
+      font-size: 10px;line-height: 24px;color:rgb(147,153,159);
+      margin:0 7px;
+    }
+  }
+}

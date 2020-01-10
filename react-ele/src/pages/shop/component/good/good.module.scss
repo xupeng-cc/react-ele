@@ -1,0 +1,81 @@
+@import '../../../../style/mixin.scss';
+
+.goods{
+  display: flex;
+  position:absolute;
+  top:6.8rem;left:0;right:0;bottom:2rem;
+  overflow:hidden;
+  background-color:#fff;
+  .menuWrapper{
+    flex:0 0 80px;
+    width:80px;
+    background: #f3f5f7;
+    .menuItem{
+      padding:0 12px;
+      width:80px;height:54px;
+      display: table;
+      line-height:14px;
+      font-weight: 200;
+      color:rgb(0,20,20);
+      span{
+        display:table-cell;height:100%;
+        font-size: 12px;
+        border-bottom:1px solid rgba(7,17,27,0.1);
+        vertical-align: middle;
+        text-align: center;
+      }
+    }
+    .current{
+      background: #fff;
+      span{
+        color:red;
+      }
+    }
+  }
+  .goodsWrapper{
+    flex: 1;
+  } 
+  .foodsTypeItem>h1{
+    background: #f3f5f7;height:26px;line-height: 26px;border-left:2px solid #d9dde1;padding-left:14px;
+    font-size: 12px;color:rgb(147,153,159);
+  }
+  .foodsItem{
+    margin:18px 18px 0 18px;font-size: 0;padding-bottom: 18px;
+    border-bottom:1px solid rgba(7,17,27,0.1);
+    .foodImg{
+      display: inline-block;width:64px;height:64px;margin-right:10px;vertical-align: top;
+    }
+    .foodContent{
+      display: inline-block;
+      width:calc(100% - 74px);
+      text-align: justify;
+      position: relative;
+    }
+    .foodName{
+      font-size: 14px;color:rgb(7,17,27);line-height: 14px;margin-top:2px;
+    }
+    .foodDes,.foodData{
+      font-size:10px;color:rgb(147,153,159);
+    }
+    .foodDes{
+      margin:8px 0;
+    }
+    .currentPrice{
+      font-size:14px;
+      color:rgb(240,20,20);
+      font-weight:700;
+      line-height: 24px;
+      margin-right:8px;
+    }
+    .oldPrice {
+      font-size:10px;
+      color:rgb(147,153,159);
+      font-weight:700;
+      line-height: 24px;
+      text-decoration:line-through;
+    }
+  }
+  .foodsTypeItem .foodsItem:last-child{
+    border: none;
+  }
+}

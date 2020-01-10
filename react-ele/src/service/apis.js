@@ -62,3 +62,12 @@ export const getRateTags = (options)=>http("get",`/ugc/v2/restaurants/${options.
 export const getRateList = (options)=>http("get",`/ugc/v2/restaurants/${options.shopid}/ratings`,options)
 //获取店铺商品信息
 export const getRestaurantMenu = (options)=>http("get","shopping/v2/menu",options)
+//获取店铺的支付信息(支付方式、预计送达时间等)
+export const checkOut = (options)=>http("post","/v1/carts/checkout",{
+  come_from: "web",
+  geohash:options.geohash,
+  restaurant_id:options.shopid,
+  entities:options.entities || ""
+})
+//获取地址信息
+export const getAddress = ({userId})=>http("get",`/v1/users/${userId}/addresses`)

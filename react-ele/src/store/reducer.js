@@ -4,6 +4,9 @@ let defaultState = {
   userInfo:{},   //用户信息
   latAndLong:{}, //经纬度
   shopDetailInfo:{},  //当前店铺信息
+  cartList:{},        //加入购物车的商品列表
+  addressList:[],      //地址列表
+  chooseAddress:null   //选择的配送地址
 }
 const StatePackage = (state)=>{
   Object.keys(state).map((key)=>{
@@ -44,6 +47,53 @@ export default (state=StatePackage(defaultState),action) => {
   }else if(type===user.RECORD_SHOP_DETAIL){
     setStore("shopDetailInfo",payload);
     return {...state,shopDetailInfo:payload}
+  }else if(type===user.ADD_CART){
+    // {"1":{"1-1":{"1-1-1":{"name":"","price":"","num":""},"1-1-2":{}}}}
+    let {shopid,category_id,foodid,name,price} = payload;
+    let cart = state.cartList;
+    let shop = cart[shopid] = (cart[shopid] || {});    // cart {"1":{}}    shop  {}
+    let category = shop[category_id] = shop[category_id] || {};  // shop {"1-1":{}}  
+    let food = category[foodid] = category[foodid]||{};          //category  {"1-1-1":{}}
+    if(food.num){
+      food.num+=1;
+    }else{
+      food.name=name;
+      food.price=price;
+      food.num=1;
+      food.quantity = 1;
+      food.item_id=foodid;
+      food.specs = ["默认值"];
+      food.packing_fee=0;
+      food.sku_id=23631;
+      food.stock=1000;
+      food.attrs=[];
+      food.extra={};
+    }
+    setStore("cartList",cart)
+    return {...state,cartList:cart}
+  }else if(type===user.REDUCE_CART){
+    let {shopid,category_id,foodid} = payload;
+    let cart = state.cartList;
+    if(cart[shopid] && cart[shopid][category_id] && cart[shopid][category_id][foodid]){
+      let food = cart[shopid][category_id][foodid];
+      if(food.num>1){
+        food.num--;
+      }else{
+        delete cart[shopid][category_id][foodid];
+      }
+    }
+    setStore("cartList",cart);
+    return {...state,cartList:cart};
+  }else if(type===user.EMPTY_CART){
+    let {shopid} = payload;
+    let cart = state.cartList;
+    cart[shopid] = {};
+    setStore("cartList",cart);
+    return {...state,cartList:cart};
+  }else if(type===user.SET_ADDRESS){
+    return {...state,addressList:payload.addressList,chooseAddress:state.chooseAddress || payload.addressList[0]};
+  }else if(type===user.CHOOSE_ADDRESS){
+    return {...state,chooseAddress:payload.chooseAddress}
   }else{
     return state;
   }

@@ -13,7 +13,8 @@ class ChooseAddress extends Component {
     this.props.history.goBack();
   }
   chooseAddr(address){
-    this.props.choose_address({chooseAddress:address})
+    this.props.choose_address({chooseAddress:address});
+    this.props.history.goBack();
   }
   render() {
     let {addressList,chooseAddress} = this.props;

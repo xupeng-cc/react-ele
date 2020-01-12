@@ -6,7 +6,8 @@ let defaultState = {
   shopDetailInfo:{},  //当前店铺信息
   cartList:{},        //加入购物车的商品列表
   addressList:[],      //地址列表
-  chooseAddress:null   //选择的配送地址
+  chooseAddress:null,   //选择的配送地址
+  historySearch:[]     //历史搜索记录
 }
 const StatePackage = (state)=>{
   Object.keys(state).map((key)=>{
@@ -94,6 +95,25 @@ export default (state=StatePackage(defaultState),action) => {
     return {...state,addressList:payload.addressList,chooseAddress:state.chooseAddress || payload.addressList[0]};
   }else if(type===user.CHOOSE_ADDRESS){
     return {...state,chooseAddress:payload.chooseAddress}
+  }else if(type===user.SAVE_HISTORY_SEARCH){
+    let historySearch = state.historySearch;
+    let keyword = payload.keyword;
+    if(historySearch.indexOf(keyword)<0){
+      historySearch.push(keyword);
+    }
+    setStore("historySearch",historySearch)
+    return {...state,historySearch}
+  }else if(type===user.DELETE_HISTORY_SEARCH){
+    let historySearch = state.historySearch;
+    let keyword = payload.keyword;
+    let index = historySearch.findIndex(h=>h===keyword);
+    historySearch.splice(index,1);
+    setStore("historySearch",historySearch)
+    console.log({...state,historySearch})
+    return {...state,historySearch}
+  }else if(type===user.EMPTY_HISTORY_SEARCH){
+    setStore("historySearch",[])
+    return {...state,historySearch:[]}
   }else{
     return state;
   }

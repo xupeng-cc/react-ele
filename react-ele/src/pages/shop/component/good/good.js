@@ -6,6 +6,7 @@ import BuyCart from '../buyCart/buyCart'
 import GoodsFoot from '../goodsFoot/goodsFoot'
 import {getRestaurantMenu} from '../../../../service/apis'
 import style from './good.module.scss'
+import { imgBaseUrl } from '../../../../config/utils'
 
 const testImgPath = "http://fuss10.elemecdn.com/c/cd/c12745ed8a5171e13b427dbc39401jpeg.jpeg?imageView2/1/w/750/h/750";
 class Good extends Component {
@@ -112,7 +113,7 @@ class FoodItem extends Component {
     return (
       <li className={style.foodsItem}>
         <div className={style.foodImg}>
-          <img src={testImgPath} width="64" height="64" alt="" />
+          <img src={imgBaseUrl+food.image_path} width="64" height="64" alt="" />
         </div>
         <div className={style.foodContent}>
           <p className={style.foodName}>{food.name}</p>

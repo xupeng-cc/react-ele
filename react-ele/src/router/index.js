@@ -15,6 +15,7 @@ import msite from '../pages/msite/msite'
 import food from '../pages/food/food'
 import shop from '../pages/shop/shop'
 import orderConfirm from '../pages/orderConfirm/orderConfirm'
+import search from '../pages/search/search'
 
 //auth字段用来判断是否需要登录才可以访问
 const Routers = [
@@ -29,7 +30,8 @@ const Routers = [
   {path:"/msite",component:msite},
   {path:"/food",component:food},
   {path:"/shop/:id",component:shop},
-  {path:"/orderConfirm",component:orderConfirm,auth:true}
+  {path:"/orderConfirm",component:orderConfirm,auth:true},
+  {path:"/search",component:search}
 ]
 
 class RouterConfig extends Component{

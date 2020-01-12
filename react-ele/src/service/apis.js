@@ -71,3 +71,9 @@ export const checkOut = (options)=>http("post","/v1/carts/checkout",{
 })
 //获取地址信息
 export const getAddress = ({userId})=>http("get",`/v1/users/${userId}/addresses`)
+//搜索接口
+export const getShopFromKey = (options)=>http("get","v4/restaurants",{
+  "extras[]":"restaurant_activity",
+  "type":"search",
+  ...options
+})

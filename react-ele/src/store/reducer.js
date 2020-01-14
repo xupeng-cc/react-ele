@@ -104,7 +104,7 @@ export default (state=StatePackage(defaultState),action) => {
     setStore("historySearch",historySearch)
     return {...state,historySearch}
   }else if(type===user.DELETE_HISTORY_SEARCH){
-    let historySearch = state.historySearch;
+    let historySearch = JSON.parse(JSON.stringify(state.historySearch));
     let keyword = payload.keyword;
     let index = historySearch.findIndex(h=>h===keyword);
     historySearch.splice(index,1);

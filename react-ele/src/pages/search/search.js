@@ -1,4 +1,4 @@
-import React, { Component,Fragment } from 'react';
+import React, { Component } from 'react';
 import style from './search.module.scss';
 import Header from '../../components/header/header'
 import {getShopFromKey} from '../../service/apis'
@@ -7,13 +7,15 @@ import {Link} from "react-router-dom"
 import {connect} from 'react-redux'
 import * as user from "../../store/action-type"
 import Icon from '../../components/incon/icon'
+import Load from '../../components/loading/loading'
 
 class Search extends Component {
   constructor(props){
     super(props);
     this.state={
       keyword:"",
-      list:null
+      list:null,
+      loadShowFlag:false
     }
   }
   goBack(){
@@ -21,22 +23,23 @@ class Search extends Component {
   }
   handleChange(e){
     let val = e.target.value;
-    this.setState({
-      keyword:val
-    })
+    this.setState({keyword:val});
+    if(!val){
+      this.setState({list:null});
+    }
   }
-  async searchShop(e){
+  async searchShop(keyword,e){
     e.preventDefault();
-    let keyword = this.state.keyword;
     if(!keyword){
       return false;
     }
+    this.setState({loadShowFlag:true,keyword})
     this.props.save_history_search({keyword})
     let result = await getShopFromKey({keyword,geohash:"40.09942,116.274524"});
-    this.setState({list:result})
+    this.setState({list:result,loadShowFlag:false})
   }
   render() {
-    let {list,keyword} = this.state;
+    let {list,keyword,loadShowFlag} = this.state;
     let historySearch = this.props.historySearch;
     return (
       <div>
@@ -44,10 +47,10 @@ class Search extends Component {
         <div className={style.search_wrapper}>
           <form action="" className={style.formContain}>
             <input type="text" placeholder="请输入商家或美食名称" maxLength="15" value={this.state.keyword} onChange={(e)=>this.handleChange(e)}/>
-            <button onClick={(e)=>this.searchShop(e)}>提交</button>
+            <button onClick={(e)=>this.searchShop(keyword,e)}>提交</button>
           </form>
           <section>
-            {list && (
+            {(list && keyword) && (
                 <SearchUl list={list}></SearchUl>
               )
             }
@@ -57,6 +60,7 @@ class Search extends Component {
             )}
           </section>
         </div>
+        {loadShowFlag && <Load></Load>}
       </div>
     )
   }
@@ -91,6 +95,7 @@ function SearchUl({list}){
 }
 
 function SearchHistoryCom({historySearch,parent}){
+  console.log(historySearch)
   if(!historySearch.length){
     return null;
   }
@@ -99,7 +104,7 @@ function SearchHistoryCom({historySearch,parent}){
       <h1 className={style.searchResult_title}>搜索历史</h1>
       <ul className={style.history_list}>
         {historySearch.map(search=>(
-          <li className={style.history_li} key={search}>
+          <li className={style.history_li} key={search} onClick={(e)=>parent.searchShop(search,e)}>
             <span>{search}</span>
             <div onClick={()=>parent.props.delete_history_search({keyword:search})}>
               <Icon iconName="delete" fill="rgb(153, 153, 153)" iconStyle={{width:"1rem",height:"1rem"}}></Icon>

@@ -50,8 +50,9 @@ class ShopList extends Component {
           this.setState({
             loadMoreFlag:false,
             loaddingFlag:true
+          },()=>{
+            this.getShopList(); 
           });
-          this.getShopList(); 
         }
     }
   }
@@ -82,7 +83,6 @@ class ShopList extends Component {
     return !is( fromJS(nextState),fromJS(this.state) )
   }
   render() {
-    console.log(this.props)
     return (
       <section style={{backgroundColor:"#fff"}}>
         {this.state.shopList.map((item)=>(
@@ -97,16 +97,16 @@ class ShopList extends Component {
   }
   getSnapshotBeforeUpdate(prevProps,prevState){
     //判断props是否发生变化，有变化重新请求数据
-    console.log("之前的"+JSON.stringify(prevProps))
-    console.log("现在的"+JSON.stringify(this.props))
     if(!is(fromJS(prevProps),fromJS(this.props))){
-      console.log("props发生了改变")
       this.getShopList();
     }
     return null;
   }
   componentDidUpdate(){
-    console.log("更新了")  
+    
+  }
+  componentWillUnmount(){
+    window.removeEventListener("scroll",this.debounce(this.loadMore,500));
   }
 }
 

@@ -16,7 +16,6 @@ function* getAddressList(){
 }
 
 function* sagas(){
-  console.log("hello sagas")
   // yield takeEvery("getAddress",getAddressList)
   yield all([
     fork(getAddressList)

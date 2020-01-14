@@ -13,6 +13,7 @@ class OrderConfirm extends Component {
   constructor(props){
     super(props);
     this.state={
+      orderConfirmInfo:null,
       shopCart:null
     }
   }
@@ -21,11 +22,15 @@ class OrderConfirm extends Component {
   }
   async checkOutInfo({shopid,geohash,entities}){
     let result = await checkOut({shopid,geohash,entities})
-    // getAddress({userId:40945})
+    if(result){
+      this.setState({
+        orderConfirmInfo:result
+      })
+    }
   }
   calcTotalPrice(){
     let totalPrice = 6;  //初始值餐盒费+配送费
-    let { shopCart } = this.state;
+    let {shopCart} = this.state;
     for(let key in shopCart){
       let cate = shopCart[key];
       for(let cateKey in cate){
@@ -35,7 +40,10 @@ class OrderConfirm extends Component {
     return totalPrice;
   }
   render() {
-    let {shopCart} = this.state;
+    if(!this.state.orderConfirmInfo){
+      return null;
+    }
+    let {shopCart,orderConfirmInfo} = this.state;
     let {chooseAddress} = this.props;
     return (
       <div className={style.orderConfirm}>
@@ -57,7 +65,7 @@ class OrderConfirm extends Component {
         <div className={style.deliver_time}>
           <p className={style.deliver_text}>送达时间</p>
           <div className={style.deliver_right}>
-            <p>尽快送达 | 预计20:20</p>
+            <p>尽快送达 | 预计{orderConfirmInfo.delivery_reach_time}</p>
             <p>蜂鸟专送</p>
           </div>
         </div>
@@ -74,7 +82,7 @@ class OrderConfirm extends Component {
         <div className={style.goodList}>
           <div className={style.goodTitle}>
             <img src={testImgPath} alt="店铺头像"/>
-            <span>店铺名字</span>
+            <span>{orderConfirmInfo.cart.restaurant_info.name}</span>
           </div>
           <ul className={style.goodList_ul}>
             {shopCart && Object.keys(shopCart).map(category=>(
@@ -98,7 +106,7 @@ class OrderConfirm extends Component {
           </div>
           <div className={style.otherCost}>
             <span>配送费</span>
-            <span>￥5</span>
+            <span>￥{orderConfirmInfo.cart.restaurant_info.float_delivery_fee}</span>
           </div>
           <div className={style.totalPrice}>
             <span>总计</span>

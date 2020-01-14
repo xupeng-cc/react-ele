@@ -8,7 +8,6 @@ import {getRestaurantMenu} from '../../../../service/apis'
 import style from './good.module.scss'
 import { imgBaseUrl } from '../../../../config/utils'
 
-const testImgPath = "http://fuss10.elemecdn.com/c/cd/c12745ed8a5171e13b427dbc39401jpeg.jpeg?imageView2/1/w/750/h/750";
 class Good extends Component {
   constructor(props) {
     super(props);

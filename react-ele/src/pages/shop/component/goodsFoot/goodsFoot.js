@@ -18,7 +18,7 @@ class GoodsFoot extends Component {
       totalPrice:0,         //加购商品总价
       totalCount:0          //加购商品总数量
     }
-    store.subscribe(this.update)
+    // store.subscribe(this.update)
   }
   //检测该店铺内加购商品的变化情况
   update = () => {
@@ -142,6 +142,7 @@ class GoodsFoot extends Component {
       logoColor:this.cartHasFood()?"#3190e8":"#141d27"
     })
     this.update();
+    store.subscribe(this.update)
   }
 }
 

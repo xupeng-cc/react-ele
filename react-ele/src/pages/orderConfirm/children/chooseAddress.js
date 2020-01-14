@@ -3,6 +3,8 @@ import style from './chooseAddress.module.scss'
 import Icon from '../../../components/incon/icon'
 import {connect} from 'react-redux'
 import Header from '../../../components/header/header'
+import {Route,Link} from 'react-router-dom'
+import AddAddress from './addAddress'
 
 class ChooseAddress extends Component {
   constructor(props){
@@ -18,6 +20,8 @@ class ChooseAddress extends Component {
   }
   render() {
     let {addressList,chooseAddress} = this.props;
+    let url = this.props.match.url;
+    console.log(url)
     return (
       <div className={style.chooseAddr_wrapper}>
         <Header title="选择地址" goBack={()=>this.goBack()}></Header>  
@@ -34,10 +38,14 @@ class ChooseAddress extends Component {
             </div>
           </div>
         ))}
-        <div className={style.addAddress}>
-          <Icon iconName="choose" fill="#3190e8"></Icon>
-          <span>新增收获地址</span>
-        </div>
+        <Link to={url+"/addAddress"}>
+          <div className={style.addAddress}>
+            <Icon iconName="add" fill="#3190e8" iconStyle={{width:"24px",height:"24px"}}></Icon>
+            <span>新增收获地址</span>
+          </div>
+        </Link>
+
+        <Route path={url+"/addAddress"} component={AddAddress}></Route>
       </div>
     )
   }

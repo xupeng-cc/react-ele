@@ -1,0 +1,45 @@
+.addAddress_wrapper{
+  position: absolute;
+  top:0;right:0;left:0;bottom:0;
+  z-index:103;
+  background-color:#f5f5f5;
+  .addAddress_container{
+    background-color:#fff;
+    padding:0 $common-offset;
+    .input_box{
+      @include flex(space-between,flex-start);
+      @extend .border-bottom;
+      .input_left{
+        flex:2;
+        line-height:2.5rem;
+      }
+      .input_right{
+        flex:5;
+        input{
+          height:2.5rem;
+          width:100%;
+          @extend .border-bottom;
+        }
+        .input_gender{
+          @include flex(flex-start);
+          height:2.5rem;
+          .genderItem{
+            margin-right:0.8rem;
+            span{
+              vertical-align:middle;
+              margin-left:0.3rem;
+            }
+          }
+        }
+      }
+    }
+  }
+  .confirmAdd{
+    @include wh(90%,1.8rem);
+    @include font(0.7rem,#fff,center);
+    line-height:1.8rem;
+    border-radius:0.2rem;
+    margin:0.6rem auto 0;
+    background-color: #4cd964;
+  }
+}

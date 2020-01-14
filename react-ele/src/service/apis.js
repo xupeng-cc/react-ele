@@ -77,3 +77,5 @@ export const getShopFromKey = (options)=>http("get","v4/restaurants",{
   "type":"search",
   ...options
 })
+//确认订单接口
+export const confirmOrder=(options)=>http("post","",{...options,come_from:"mobile_web"})

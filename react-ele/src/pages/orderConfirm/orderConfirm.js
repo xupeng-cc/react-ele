@@ -39,6 +39,10 @@ class OrderConfirm extends Component {
     }
     return totalPrice;
   }
+  //确认下单
+  order(){
+    
+  }
   render() {
     if(!this.state.orderConfirmInfo){
       return null;
@@ -125,7 +129,7 @@ class OrderConfirm extends Component {
         </div>
         <footer className={style.confirmFoot}>
           <span>待支付￥121</span>
-          <span>确认下单</span>
+          <span onClick={()=>this.order()}>确认下单</span>
         </footer>
 
         <Route path={this.props.match.url+"/chooseAddress"} component={ChooseAddress}></Route>

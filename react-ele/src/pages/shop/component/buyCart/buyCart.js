@@ -12,7 +12,7 @@ class BuyCart extends Component {
       foodNum: 0
     }
     //监听cartList的变化
-    store.subscribe(this.getNum)
+    // store.subscribe(this.getNum)
   }
   //改变商品数量
   changeFoodCount(offset) {
@@ -60,6 +60,7 @@ class BuyCart extends Component {
   }
   componentDidMount() {
     this.getNum();
+    store.subscribe(this.getNum)
   }
 }
 
